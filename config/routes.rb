@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :reviews
-  resources :clubs
-  resources :users
+  resources :clubs, only: [:show, :index]
+  resources :users, only: [:show]
   root to: 'pages#home'
+
+  resources :clubs do
+    resources :reviews, only: [:new]
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
