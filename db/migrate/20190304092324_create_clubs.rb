@@ -5,6 +5,7 @@ class CreateClubs < ActiveRecord::Migration[5.2]
       t.text :info
       t.string :location
       t.string :country
+      t.string :img_url
 
       t.timestamps
     end

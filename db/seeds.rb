@@ -12,11 +12,11 @@ u3 = User.create(first_name: "Elisabet", last_name: "Silje", bio: "I'm recently 
 u4 = User.create(first_name: "Luc", last_name: "Batty", bio: "I am fairly new to golf", handicap: 34, country: "Sweden")
 u5 = User.create(first_name: "Ricky", last_name: "MacCaw", bio: "I have just started playing!", handicap: 36, country: "Sweden")
 
-c1 = Club.create(name: "Roehampton Club", info: "London's closest club", location: "Roehampton", country: "United Kingdom")
-c2 = Club.create(name: "Torekov GK", info: "Sweden's most beautiful Links", location: "Torekov", country: "Sweden")
-c3 = Club.create(name: "Royal St. George's Golf Club", info: "Amongst the world's leading golf clubs", location: "Kent", country: "United Kingdom")
-c4 = Club.create(name: "Rättvik GK", info: "A beautiful club close to Siljan", location: "Rättvik", country: "Sweden")
-c5 = Club.create(name: "Richmond Park Golf Club", info: "Two 18 hole golf courses close to central London", location: "Richmond", country: "United Kingdom")
+c1 = Club.create(name: "Roehampton Club", info: "London's closest club", location: "Roehampton", country: "United Kingdom", img_url: "https://www.world-of-leading-golf.com/files/DATEN/Bilder/Club%20Pictures/British%20Isles/Roehampton/Roe_1_webn.jpg")
+c2 = Club.create(name: "Torekov GK", info: "Sweden's most beautiful Links", location: "Torekov", country: "Sweden", img_url: "http://www.togk.se/Media/Get/4523/_z8b8351.jpg")
+c3 = Club.create(name: "Royal St. George's Golf Club", info: "Amongst the world's leading golf clubs", location: "Kent", country: "United Kingdom", img_url: "http://www.golfdaily.com/wp-content/uploads/SaintGeorges.jpg")
+c4 = Club.create(name: "Rättvik GK", info: "A beautiful club close to Siljan", location: "Rättvik", country: "Sweden", img_url: "https://golfadvisor.brightspotcdn.com/dims4/default/1d4c7f3/2147483647/strip/true/crop/1024x661+0+11/resize/930x600!/quality/90/?url=https%3A%2F%2Fgolfadvisor.brightspotcdn.com%2F8c%2F7b%2F136a4a4e31ef3cb2aa28eda7fbf8%2F83736.jpg")
+c5 = Club.create(name: "Richmond Park Golf Club", info: "Two 18 hole golf courses close to central London", location: "Richmond", country: "United Kingdom", img_url: "https://www.royalparks.org.uk/_media/images/richmond-park/richmond-park-golf-course/Richmond-Park-Golf-Course.jpg/w_768.jpg")
 
 
 Review.create(content: "Beautiful club, very friendly staff", rank: 8, user: u1, club: c1)
