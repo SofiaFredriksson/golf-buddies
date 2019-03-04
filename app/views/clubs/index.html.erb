@@ -3,7 +3,8 @@
 <h2>Select a club to see their reviews:</h2>
 
 <% @clubs.each do |club| %>
-<%= link_to club.name, club_path(club)%>
+<%= link_to club.name, club_path(club)%>,
+<%= club.country %>
 
 
 <br/><br/>

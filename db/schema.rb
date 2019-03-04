@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_102017) do
     t.string "name"
     t.text "info"
     t.string "location"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_102017) do
     t.string "last_name"
     t.text "bio"
     t.float "handicap"
+    t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

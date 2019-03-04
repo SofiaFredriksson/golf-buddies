@@ -6,17 +6,17 @@ Review.destroy_all
 
 
 
-u1 = User.create(first_name: "Sofia", last_name: "Fredriksson", bio: "I have been golfing for 3 years and i enjoy it very much", handicap: 32)
-u2 = User.create(first_name: "Kalle", last_name: "Silje", bio: "Golfing is my life", handicap: 12.5)
-u3 = User.create(first_name: "Elisabet", last_name: "Silje", bio: "I'm recently retired and now i golf every day!'", handicap: 6)
-u4 = User.create(first_name: "Luc", last_name: "Batty", bio: "I am fairly new to golf", handicap: 34)
-u5 = User.create(first_name: "Ricky", last_name: "MacCaw", bio: "I have just started playing!", handicap: 36)
+u1 = User.create(first_name: "Sofia", last_name: "Fredriksson", bio: "I have been golfing for 3 years and i enjoy it very much", handicap: 32, country: "Sweden")
+u2 = User.create(first_name: "Kalle", last_name: "Silje", bio: "Golfing is my life", handicap: 12.5, country: "United Kingdom")
+u3 = User.create(first_name: "Elisabet", last_name: "Silje", bio: "I'm recently retired and now i golf every day!'", handicap: 6, country: "Switzerland")
+u4 = User.create(first_name: "Luc", last_name: "Batty", bio: "I am fairly new to golf", handicap: 34, country: "Sweden")
+u5 = User.create(first_name: "Ricky", last_name: "MacCaw", bio: "I have just started playing!", handicap: 36, country: "Sweden")
 
-c1 = Club.create(name: "Roehampton Club", info: "London's closest club", location: "Roehampton, United Kingdom")
-c2 = Club.create(name: "Torekov GK", info: "Sweden's most beautiful Links", location: "Torekov, Sweden")
-c3 = Club.create(name: "Royal St. George's Golf Club", info: "Amongst the world's leading golf clubs", location: "Kent, United Kingdom")
-c4 = Club.create(name: "Rättvik GK", info: "A beautiful club close to Siljan", location: "Rättvik, Sweden")
-c5 = Club.create(name: "Richmond Park Golf Club", info: "Two 18 hole golf courses close to central London", location: "Richmond, United Kingdom")
+c1 = Club.create(name: "Roehampton Club", info: "London's closest club", location: "Roehampton", country: "United Kingdom")
+c2 = Club.create(name: "Torekov GK", info: "Sweden's most beautiful Links", location: "Torekov", country: "Sweden")
+c3 = Club.create(name: "Royal St. George's Golf Club", info: "Amongst the world's leading golf clubs", location: "Kent", country: "United Kingdom")
+c4 = Club.create(name: "Rättvik GK", info: "A beautiful club close to Siljan", location: "Rättvik", country: "Sweden")
+c5 = Club.create(name: "Richmond Park Golf Club", info: "Two 18 hole golf courses close to central London", location: "Richmond", country: "United Kingdom")
 
 
 Review.create(content: "Beautiful club, very friendly staff", rank: 8, user: u1, club: c1)
