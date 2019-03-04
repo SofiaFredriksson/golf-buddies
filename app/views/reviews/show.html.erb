@@ -1,0 +1,13 @@
+<h1><%= @review.user.name %>'s <%=@review.club.name %> Review</h1>
+
+<b>Rank:</b> <%=@review.rank %><br/>
+<b>Content:</b> <%= @review.content %><br/>
+
+<br/>
+
+See more reviews from <%= link_to @review.club.name, club_path(@review.club) %>
+<br/><br/>
+See more reviews from <%= link_to @review.user.name, user_path(@review.user) %>
+<br/><br/>
+
+<%= link_to "Edit Me", edit_review_path(@review) %>

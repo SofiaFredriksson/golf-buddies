@@ -1,0 +1,19 @@
+<h1><%= @user.name %></h1>
+<b>About me</b><br/>
+<%= @user.bio %><br/><br/>
+<b>Handicap: </b> <%= @user.handicap %><br/>
+
+<br/><br/><br/>
+
+<b><%=@user.name%>'s reviews</b><br/>
+<br/>
+
+<% i = 1 %>
+<% @user.reviews.each do |review|%>
+<%= link_to "Review #{i}", review_path(review) %><br/>
+Club: <%= link_to review.club.name, club_path(review.club) %><br/>
+<%= review.content%><br/>
+Rank: <%= review.rank %><br/>
+<% i += 1 %>
+<br/><br/>
+<% end %>
