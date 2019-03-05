@@ -19,3 +19,5 @@ Rank: <%= review.rank %><br/>
 <% i += 1 %>
 <br/><br/>
 <% end %>
+
+<%= link_to "#{@user.name}'s Buddies", buddies_path(@user) %><br/>

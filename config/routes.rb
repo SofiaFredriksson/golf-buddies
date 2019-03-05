@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :reviews
   resources :clubs, only: [:show, :index]
   resources :users, only: [:show]
+
+  get  'users/:id/buddies' => 'users#buddies', as: :buddies
   root to: 'pages#home'
 
   resources :clubs do

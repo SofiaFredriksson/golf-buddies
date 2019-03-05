@@ -1,0 +1,34 @@
+<h1><%=@user.first_name%>'s Golf Buddies</h1><br/><br/>
+
+<% if @user.recommend_buddies_country.empty? %>
+Sorry, there are currently no Golf Buddies in your country.
+<% else %>
+<h4>These Golf buddies live in the same country as you:</h4>
+<% @user.recommend_buddies_country.each do |buddies| %>
+<%= buddies %><br/>
+<% end %>
+<% end %>
+<br/>
+<br/>
+
+<% if @user.recommend_buddies_handicap.empty? %>
+Sorry, there are currently no Golf Buddies within your handicap range
+<% else %>
+<h4>These Golf Buddies are within your handicap range:</h4>
+<% @user.recommend_buddies_handicap.each do |buddies| %>
+<%= buddies %><br/>
+<% end %>
+<% end %>
+<br/>
+<br/>
+
+<% if @user.recommend_buddies_club.empty? %>
+Sorry, there are currently no Golf Buddies within your handicap range
+<% else %>
+<h4>These Golf Buddies have visited the same clubs as you:</h4>
+<% @user.recommend_buddies_club.each do |buddies| %>
+<%= buddies %><br/>
+<% end %>
+<% end %>
+<br/>
+<br/>
