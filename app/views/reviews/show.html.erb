@@ -15,7 +15,6 @@ See more reviews from <%= link_to @review.club.name, club_path(@review.club) %>
 See more reviews from <%= link_to @review.user.name, user_path(@review.user) %>
 <br/><br/>
 
-<%= link_to "Edit Me", edit_review_path(@review) %>
 
 
 <%= link_to 'Delete', @review, method: :delete, data: { confirm: "Really?" } %>

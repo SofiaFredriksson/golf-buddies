@@ -4,7 +4,11 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    if !params[:club_id]
+      redirect_to root_path
+    else
     @review = Review.new
+  end
   end
 
   def create
@@ -16,15 +20,7 @@ class ReviewsController < ApplicationController
       end
   end
 
-  def edit
-    @review = Review.find(params[:id])
-  end
 
-  def update
-    @review = Review.find(params[:id])
-    @review.update(review_params)
-    redirect_to @review
-  end
 
   def destroy
      @review = Review.find(params[:id]).destroy
