@@ -1,23 +1,38 @@
 <h1><%= @user.name %></h1>
+
+<div class="col-sm-5 single-post-card" >
+  <div class="card">
+    <div class="card-block">
+
+      <div class="post-content">
 <h3><%= @user.country %></h3>
 <b>About me</b><br/>
-<%= @user.bio %><br/><br/>
+<%= @user.bio %><br/>
 
 <b>Handicap: </b> <%= @user.handicap %><br/>
 
-<br/><br/><br/>
+<%= link_to "#{@user.name}'s Buddies", buddies_path(@user) %>
 
-<b><%=@user.name%>'s reviews</b><br/>
+<br/><br/>
+
+
+
+<b><%=@user.name%>'s reviews</b>
 <br/>
 
 <% i = 1 %>
 <% @user.reviews.each do |review|%>
 <%= link_to "Review #{i}", review_path(review) %><br/>
-Club: <%= link_to review.club.name, club_path(review.club) %><br/>
+<b>Date Added:</b> <%= review.date %><br/>
+<b>Club:</b> <%= link_to review.club.name, club_path(review.club) %><br/>
 <%= review.content%><br/>
-Rank: <%= review.rank %><br/>
+<b>Rank: </b><%= review.rank %><br/>
 <% i += 1 %>
 <br/><br/>
 <% end %>
 
-<%= link_to "#{@user.name}'s Buddies", buddies_path(@user) %><br/>
+
+</div>
+</div>
+</div><!-- card -->
+</div><!-- col-sm-3 -->

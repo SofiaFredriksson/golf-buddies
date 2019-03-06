@@ -6,4 +6,6 @@ class UsersController < ApplicationController
   def buddies
     @user = User.find(params[:id])
   end
+
+
 end
