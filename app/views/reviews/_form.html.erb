@@ -1,11 +1,19 @@
 <%= form_for @review do |f| %>
 
+<h3><%= @club.name %></h3>
+<%= f.hidden_field :club_id, value: params[:club_id]%>
+
+<%= f.label :date %><br />
+<%= f.date_field :date %>
+
+<br /><br />
+
 <%= f.label :user %>:<br />
 <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Select User" }  %>
 
 <br /><br />
 
-
+<%= @club.name %>
 <%= f.hidden_field :club_id, value: params[:club_id]%>
 
 

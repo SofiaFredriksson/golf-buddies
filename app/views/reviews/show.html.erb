@@ -1,20 +1,18 @@
 
+      <h1><%= @review.user.name %>'s <%=@review.club.name %> Review</h1>
+
+      <b>Date Added:</b> <%= @review.date %><br/>
+      <b>Golf Buddy Rating:</b> <%=@review.rank %><br/>
+      <b>Content:</b> <%= @review.content %><br/>
+
+      <br/>
+
+      See more reviews from <%= link_to @review.club.name, club_path(@review.club) %>
+      <br/><br/>
+      See more reviews from <%= link_to @review.user.name, user_path(@review.user) %>
+      <br/><br/>
 
 
 
-
-<h1><%= @review.user.name %>'s <%=@review.club.name %> Review</h1>
-
-<b>Rank:</b> <%=@review.rank %><br/>
-<b>Content:</b> <%= @review.content %><br/>
-
-<br/>
-
-See more reviews from <%= link_to @review.club.name, club_path(@review.club) %>
-<br/><br/>
-See more reviews from <%= link_to @review.user.name, user_path(@review.user) %>
-<br/><br/>
-
-
-
-<%= link_to 'Delete', @review, method: :delete, data: { confirm: "Really?" } %>
+      <%= link_to 'Delete', @review, method: :delete, data: { confirm: "Really?" } %>
+  

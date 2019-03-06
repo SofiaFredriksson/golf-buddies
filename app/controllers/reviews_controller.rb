@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @club = Club.find(params[:club_id])
     if !params[:club_id]
       redirect_to root_path
     else
@@ -33,6 +34,6 @@ class ReviewsController < ApplicationController
 private
 
 def review_params
-  params.require(:review).permit(:content, :rank, :user_id, :club_id)
+  params.require(:review).permit(:content, :rank, :user_id, :club_id, :date)
 end
 end

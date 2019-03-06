@@ -1,26 +1,40 @@
+<div class="media">
+   <div class="media-right media-top">
+    <img src="<%=@club.img_url%>" class="img-circle" alt="Cinque Terre" width="200" height="200">
+    </div>
+    <div class="media-body">
 
-<h1>Welcome to <%= @club.name %>
-<h2><%= @club.location %>, <%=@club.country%></h2>
+      <div class="col-sm-7 single-post-card" >
+        <div class="card">
+          <div class="card-block">
 
-<%= @club.info %><br/><br/>
+            <div class="post-content">
 
+              <h1>Welcome to <%= @club.name %>
+                <h2><%= @club.location %>, <%=@club.country%></h2>
 
+                <%= @club.info %><br/><br/>
 
-<b>Average Golf Buddies Ranking: </b><%= @average%><br/><br/>
+                <b>Average Golf Buddies Rating: </b><%= @average%><br/><br/>
 
-<%= image_tag @club.img_url %><br/><br/>
+                <%= link_to "New Review", new_club_review_path(@club) %><br/><br/>
 
+                <h4>Have a browse through our reviews...</h4>
+                <% i = 1 %>
+                <% @club.reviews.each do |review|%>
+                <%= link_to "Review #{i}", review_path(review) %><br/>
+                <div class="posted-by">Posted by <%= link_to review.user.name, user_path(review.user) %></div>
 
-<b>Have a browse through our reviews... </b><br/><br/>
-<% i = 1 %>
-<% @club.reviews.each do |review|%>
-<%= link_to "Review #{i}", review_path(review) %><br/>
-<%= review.content%><br/>
-Rank: <%= review.rank %><br/>
-Posted by: <%= link_to review.user.name, user_path(review.user) %><br/>
-<br/><br/>
-<% i += 1 %>
-<% end %>
+                <b>Date added:</b> <%= review.date %><br/>
+                <%= review.content%><br/>
+                <b>Golf Buddy Rating:</b> <%= review.rank %><br/>
 
-
-<%= link_to "New Review", new_club_review_path(@club) %><br/>
+                <br/><br/>
+                <% i += 1 %>
+                <% end %>
+              </div>
+            </div>
+          </div><!-- card -->
+        </div><!-- col-sm-3 -->
+      </div>
+    </div>
