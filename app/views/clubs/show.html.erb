@@ -6,7 +6,7 @@
 
 
 
-<b>Average Golf Buddies Ranking: </b><%= @average %><br/><br/>
+<b>Average Golf Buddies Ranking: </b><%= @average%><br/><br/>
 
 <%= image_tag @club.img_url %><br/><br/>
 
@@ -17,8 +17,10 @@
 <%= link_to "Review #{i}", review_path(review) %><br/>
 <%= review.content%><br/>
 Rank: <%= review.rank %><br/>
-Golf Buddy: <%= link_to review.user.name, user_path(review.user) %><br/>
+Posted by: <%= link_to review.user.name, user_path(review.user) %><br/>
 <br/><br/>
 <% i += 1 %>
 <% end %>
-<!-- add new review link -->
+
+
+<%= link_to "New Review", new_club_review_path(@club) %><br/>

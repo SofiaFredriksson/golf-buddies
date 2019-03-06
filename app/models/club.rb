@@ -12,6 +12,6 @@ class Club < ApplicationRecord
     size = ranks.size
 
     average = total/size
-    average
+    average 
   end
 end
