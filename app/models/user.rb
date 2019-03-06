@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :reviews
   has_many :clubs, through: :reviews
+  validates_uniqueness_of :username
+
 
 
   def name
