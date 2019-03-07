@@ -3,7 +3,8 @@
 
             <h2>The user-lead golf review website!</h2>
 
-            <h3>Real reviews by real users</h3>
+            <h3>Real reviews by real users</h3><br/>
+<button type="button" class="btn btn-secondary btn-lg"><%= link_to "Enter", clubs_path(@clubs) %></button><br/><br/>
 
-            <%= link_to "Enter", clubs_path(@clubs) %>
-        
+
+            There are currently <%=@users.number_of_users%> Golf Buddies. Would you like to <%= link_to "join the Club", new_user_path(@user)%>?

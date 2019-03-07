@@ -12,6 +12,10 @@ class Club < ApplicationRecord
     size = ranks.size
 
     average = total/size
-    average 
+    average
+  end
+
+  def number_of_reviews
+    self.reviews.count
   end
 end

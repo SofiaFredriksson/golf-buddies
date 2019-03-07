@@ -10,6 +10,10 @@ nav {
     button:hover, .navbar-brand:hover {
       opacity: 0.8;
     }
+    .col-sm-5, .col-sm-7 {
+      padding: 0;
+    }
+
   }
 }
 
@@ -24,4 +28,10 @@ nav {
 
 body {
  margin-top: 50px;
+}
+
+
+
+.icon-bar {
+  background-color: white !important;
 }

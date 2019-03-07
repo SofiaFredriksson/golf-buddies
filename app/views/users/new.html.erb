@@ -1,26 +1,24 @@
-<h1>Sign up</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %><br/><br/>
+<div class="container" id="sign-up-form">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
 
-      <%= f.label :last_name%>
-      <%= f.text_field :last_name %><br/><br/>
-
-      <%= f.label :handicap%>
-      <%= f.text_field :handicap %><br/><br/>
-
-      <%= f.label :country%>
-      <%= f.text_field :country %><br/><br/>
-
-      <%= f.label :username %>
-      <%= f.text_field :username %><br/><br/>
-
-      <%= f.label :bio, "About Me"%>
-      <%= f.text_area:bio %><br/><br/>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <h2 class="text-left">Sign up</h2>
+    <%= bootstrap_form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
     <% end %>
+      <%= f.text_field :first_name %>
+      <%= f.text_field :last_name %>
+      <%= f.text_field :handicap %>
+      <%= f.text_field :country %>
+      <%= f.text_field :username %>
+      <%= f.text_area:bio %>
+      <%= f.submit "Create my account", class: 'form-control login-button' %>
+    <% end %>
+    </div>
   </div>
 </div>

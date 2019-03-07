@@ -1,9 +1,11 @@
+<div id="single-post-content" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <h3><%= @review.user.name %>'s <%=@review.club.name %> Review</h3>
 
-      <h1><%= @review.user.name %>'s <%=@review.club.name %> Review</h1>
-
-      <b>Date Added:</b> <%= @review.date %><br/>
-      <b>Golf Buddy Rating:</b> <%=@review.rank %><br/>
-      <b>Content:</b> <%= @review.content %><br/>
+     <div class="info"><b>Date Added:</b> <%= @review.date %><br/>
+      <b>Golf Buddy Rating:</b> <%=@review.rank %></div>
+    <p>  <b>Content:</b> <%= @review.content %></p>
 
       <br/>
 
@@ -15,4 +17,7 @@
 
 
       <%= link_to 'Delete', @review, method: :delete, data: { confirm: "Really?" } %>
-  
+
+    </div>
+      </div><!-- row -->
+    </div>

@@ -1,0 +1,7 @@
+<% i = 1 %>
+    <%= link_to "Review #{i}", review_path(review) %><br/>
+    Posted by <%= link_to review.user.name, user_path(review.user) %><br/>
+    <b>Date added:</b> <%= review.date %><br/>
+    <%= review.content%><br/>
+    <b>Golf Buddy Rating:</b> <%= review.rank %><br/>
+    <% i += 1 %>

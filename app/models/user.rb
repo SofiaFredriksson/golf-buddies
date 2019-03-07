@@ -1,9 +1,13 @@
 class User < ApplicationRecord
   has_many :reviews
   has_many :clubs, through: :reviews
+  has_secure_password
   validates_uniqueness_of :username
 
 
+  def self.number_of_users
+    User.all.count
+  end
 
   def name
     self.first_name + " " + self.last_name

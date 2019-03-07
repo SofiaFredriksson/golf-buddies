@@ -1,40 +1,44 @@
 <div class="media">
-   <div class="media-right media-top">
+  <div class="media-left media-top">
     <img src="<%=@club.img_url%>" class="img-circle" alt="Cinque Terre" width="200" height="200">
     </div>
     <div class="media-body">
+      <h1>Welcome to <%= @club.name %>
+        <h2><%= @club.location %>, <%=@club.country%></h2>
+        <%= @club.info %><br/><br/>
+        <h5><%=@club.name%> currently has <%= @club.number_of_reviews%> reviews</h5>
+        <b>Average Golf Buddies Rating: </b><%= @average%><br/><br/>
+        <%= link_to "New Review", new_club_review_path(@club) %><br/><br/>
+        <h4>Have a browse through our reviews...</h4>
 
-      <div class="col-sm-7 single-post-card" >
-        <div class="card">
-          <div class="card-block">
 
-            <div class="post-content">
 
-              <h1>Welcome to <%= @club.name %>
-                <h2><%= @club.location %>, <%=@club.country%></h2>
+        <!-- <div class="container">
+          <div class="row">
+            <div id="main-content" class="col-sm-10" style="overflow:scroll"> -->
+              <div class="card-deck">
+                    <% @club.reviews.each do |review|%>
+                    <div class="col-sm-3 single-post-card">
+                    <div class="card">
+                      <div class="card-block">
+                        <p class="card-text">
 
-                <%= @club.info %><br/><br/>
 
-                <b>Average Golf Buddies Rating: </b><%= @average%><br/><br/>
+                              <b>Posted by: </b><%=review.user.name%><br/>
+                              <b>Date added: </b> <%= review.date %><br/>
+                              <b>Golf Buddy Rating: </b> <%= review.rank %><br/>
 
-                <%= link_to "New Review", new_club_review_path(@club) %><br/><br/>
+                              <button type="button" class="btn btn-secondary btn-sm"><%= link_to "Read More", review_path(review) %></button>
 
-                <h4>Have a browse through our reviews...</h4>
-                <% i = 1 %>
-                <% @club.reviews.each do |review|%>
-                <%= link_to "Review #{i}", review_path(review) %><br/>
-                <div class="posted-by">Posted by <%= link_to review.user.name, user_path(review.user) %></div>
+                        </p>
+                      </div>
+                    </div>
+                    </div>
 
-                <b>Date added:</b> <%= review.date %><br/>
-                <%= review.content%><br/>
-                <b>Golf Buddy Rating:</b> <%= review.rank %><br/>
-
-                <br/><br/>
-                <% i += 1 %>
-                <% end %>
-              </div>
+                    <% end %>
+<!-- </div>
             </div>
-          </div><!-- card -->
-        </div><!-- col-sm-3 -->
+          </div> -->
+        </div>
       </div>
     </div>
