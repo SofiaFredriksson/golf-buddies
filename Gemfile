@@ -16,6 +16,7 @@ gem "bootstrap_form", ">= 4.1.0"
 
 gem 'sass-rails', '~> 5.0'
 
+gem 'pry'
 gem 'bcrypt'
 
 gem 'jquery-rails'

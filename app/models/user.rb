@@ -2,7 +2,9 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :clubs, through: :reviews
   has_secure_password
-  validates_uniqueness_of :username
+  validates :username, uniqueness: { case_sensitive: false }
+  validates :password, presence:true
+
 
 
   def self.number_of_users

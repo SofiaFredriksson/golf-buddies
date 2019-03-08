@@ -1,5 +1,14 @@
 <%= form_for @review do |f| %>
 
+<% if @review.errors.any? %>
+<ul>
+  <% @review.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 <h3><%= @club.name %></h3>
 <%= f.hidden_field :club_id, value: params[:club_id]%>
 

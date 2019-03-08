@@ -6,11 +6,11 @@ Review.destroy_all
 
 
 
-u1 = User.create(first_name: "Sofia", last_name: "Fredriksson", bio: "I have been golfing for 3 years and i enjoy it very much", handicap: 32, country: "Sweden", username: "SofiaF")
-u2 = User.create(first_name: "Kalle", last_name: "Silje", bio: "Golfing is my life", handicap: 12.5, country: "United Kingdom", username: "KalleF")
-u3 = User.create(first_name: "Elisabet", last_name: "Silje", bio: "I'm recently retired and now i golf every day!'", handicap: 6, country: "Switzerland", username: "ElisabetF")
-u4 = User.create(first_name: "Luc", last_name: "Batty", bio: "I am fairly new to golf", handicap: 34, country: "Sweden", username: "LucF")
-u5 = User.create(first_name: "Ricky", last_name: "MacCaw", bio: "I have just started playing!", handicap: 36, country: "Sweden", username: "RickyF")
+u1 = User.create(first_name: "Sofia", last_name: "Fredriksson", bio: "I have been golfing for 3 years and i enjoy it very much", handicap: 32, country: "Sweden", username: "SofiaF", password: "admin")
+u2 = User.create(first_name: "Kalle", last_name: "Silje", bio: "Golfing is my life", handicap: 12.5, country: "United Kingdom", username: "KalleF", password: "admin")
+u3 = User.create(first_name: "Elisabet", last_name: "Silje", bio: "I'm recently retired and now i golf every day!'", handicap: 6, country: "Switzerland", username: "ElisabetF", password: "admin")
+u4 = User.create(first_name: "Luc", last_name: "Batty", bio: "I am fairly new to golf", handicap: 34, country: "Sweden", username: "LucF", password: "admin")
+u5 = User.create(first_name: "Ricky", last_name: "MacCaw", bio: "I have just started playing!", handicap: 36, country: "Sweden", username: "RickyF", password: "admin")
 
 c1 = Club.create(name: "Roehampton Club", info: "London's closest club", location: "Roehampton", country: "United Kingdom", img_url: "https://www.world-of-leading-golf.com/files/DATEN/Bilder/Club%20Pictures/British%20Isles/Roehampton/Roe_1_webn.jpg")
 c2 = Club.create(name: "Torekov GK", info: "Sweden's most beautiful Links", location: "Torekov", country: "Sweden", img_url: "https://hotelrivierastrand.se/en/app/uploads/sites/4/riviera-strand-torekocsgk-hav-1300x1000-785x604.jpg")
