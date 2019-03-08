@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :clubs, through: :reviews
   has_secure_password
   validates :username, uniqueness: { case_sensitive: false }
-  validates :password, presence:true
+  
 
 
 
@@ -30,7 +30,7 @@ class User < ApplicationRecord
           recommended_buddies << user
         end
       end
-      recommended_buddies.select{|buddy| !buddy.include?self.name}
+      recommended_buddies.select{|buddy| !buddy.include?self.name}.uniq
   end
 
   def self.user_by_handicap
@@ -58,7 +58,7 @@ class User < ApplicationRecord
           end
         end
       end
-      arr.select{|buddy| !buddy.include?self.name}
+      arr.select{|buddy| !buddy.include?self.name}.uniq
   end
 
   def recommend_buddies_club
@@ -70,7 +70,7 @@ class User < ApplicationRecord
        end
      end
    end
-     arr.select{|buddy| !buddy.include?self.name}
+     arr.select{|buddy| !buddy.include?self.name}.uniq
   end
 
 

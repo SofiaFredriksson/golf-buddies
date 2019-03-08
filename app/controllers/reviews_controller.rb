@@ -9,13 +9,14 @@ class ReviewsController < ApplicationController
       redirect_to root_path
     else
     @review = Review.new
-  end
+    end
   end
 
   def create
+    # binding.pry
     @review = Review.new(review_params)
       if @review.save
-        redirect_to @review
+        redirect_to review_path(@review)
       else
         render :new
       end

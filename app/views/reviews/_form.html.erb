@@ -1,4 +1,10 @@
-<%= form_for @review do |f| %>
+<div class="container" id="sign-up-form">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+<h2 class="text-left"><%= @current_user.name %>'s new review!</h2>
+
+
+<%= bootstrap_form_for @review do |f| %>
 
 <% if @review.errors.any? %>
 <ul>
@@ -8,37 +14,29 @@
 </ul>
 <% end %>
 
-
 <h3><%= @club.name %></h3>
 <%= f.hidden_field :club_id, value: params[:club_id]%>
 
-<%= f.label :date %><br />
+
 <%= f.date_field :date %>
 
-<br /><br />
-
-<%= f.label :user %>:<br />
-<%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Select User" }  %>
-
-<br /><br />
-
-<%= @club.name %>
-<%= f.hidden_field :club_id, value: params[:club_id]%>
 
 
-<br /><br />
+<%= f.hidden_field :user_id, value: session[:user_id]%>
 
-<%= f.label :content %>:<br />
+
+
+
 <%= f.text_area :content %>
 
-<br /><br />
 
-<%= f.label :rank %>:<br />
+
 <%= f.select :rank, options_for_select(0..10), { prompt: "Select Rank" } %>
 
-
-<br /><br />
 
 
 <%= f.submit %>
 <% end %>
+</div>
+</div>
+</div>

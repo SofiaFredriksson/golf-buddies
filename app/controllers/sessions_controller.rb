@@ -9,16 +9,22 @@ class SessionsController < ApplicationController
   def create
     # no strong params cause there is no mass assignment
     @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to @user
+    if !@user.nil?
+      if @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect_to @user
+      else
+        flash[:error] = "Incorrect Password"
+        redirect_to login_path
+      end
     else
-      flash[:errors] = @user.errors.full_messages
-      redirect_to login_path
+        flash[:error] = "Incorrect username"
+        render :new
     end
   end
 
   def destroy
     session.delete(:user_id) # or session[:user_id] = nil
+    redirect_to root_path
   end
 end

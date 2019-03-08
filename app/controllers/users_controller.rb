@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 skip_before_action :authorized, only: [:new, :create]
 
 
+
   def show
     # @user = User.find(params[:id])
     @user = User.find(params[:id])
@@ -22,6 +23,19 @@ skip_before_action :authorized, only: [:new, :create]
       redirect_to @user
     else
       redirect_to new_user_path
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+    render :edit
     end
   end
 
